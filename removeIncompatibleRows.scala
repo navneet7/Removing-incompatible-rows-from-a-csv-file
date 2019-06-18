@@ -16,11 +16,13 @@ object removeIncompatibleRows extends App{
   .getOrCreate()
 
   
+  val filePath = yourBasePath+"/sample_file.csv"
+  
   //Setting log level to ERROR
   Logger.getLogger("org").setLevel(Level.ERROR)
   
   //Reading csv as textFile
-  val text = sc.textFile("C:/Users/nakumar/Pictures/Project/Udemy/Scala-and-Spark-Bootcamp-master/Machine_Learning_Sections/retrofit.csv")
+  val text = sc.textFile(filePath)
 
   //Converting textFile to Dataframe
   val df = text.toDF()
